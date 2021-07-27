@@ -53,4 +53,18 @@
 
 ### Flex Items
   - order : flex item의 순서를 설정 / 숫자가 크면 뒤로 밀림 음수일수록 앞으로 가게 됨
-  - flex-grow : item의 증거 너비 비율을 설정합니다 숫자가 크면 더 많은 너비를 가집니다
+  - flex-grow : item의 증가 너비 비율을 설정합니다 숫자가 크면 더 많은 너비를 가집니다
+
+### flex-shrink
+  - item이 감소하는 너비의 비율을 설정 , 숫자가 크면 더 많은 너비가 감소함
+
+### flex-basis
+  - item의 기본 너비를 설정
+
+### flex(0,1,0)
+  - 너비를 설정하는 단축 속성
+  
+### align-self
+  - 교차 축에서 개별 item의 정렬 방법을 설정
+  - align-items보다 더 우선으로 적용이 됨
+  - auto가 추가로 있음(align-items)에서 속성을 상속받음
