@@ -99,4 +99,35 @@
   }
 ```
 ![image](https://user-images.githubusercontent.com/80936709/127149673-f99eea6b-25fe-4650-aee0-247f47ea4a90.png)
-  - 함수 이름 중복이 되면 충돌할 수가 
+  - 함수 이름 중복이 되면 충돌할 수가 있음
+  - @if / @else / @else if 이렇게 사용할 수 있음 
+  - () 조건문을 생략할 수 있음
+```react
+  $color:orange;
+  @if color == strawberry {
+    color: #FE2E2E;
+  } @else if $color == orange {
+    color: #FE9A2E;
+  } @else {
+    color: #2A1B0A;
+  }
+<!-- CSS 문법-->
+  div{
+    color: #FE9A2E;
+  }
+```
+```react
+  if(unitless($w),#{$w}px,$w);
+  // unitless단위가 있는지 없는지 표현하는 내장 함수로 px이 있으면 $w로 나타나고, true일 경우에는 #{$w}px로 나타나게 됨
+```
+  - @for 스타일을 반복적으로 출력함
+![image](https://user-images.githubusercontent.com/80936709/127249792-0db6d1bb-b755-4831-b4ee-848c62bdc364.png)
+  - from 1 to 10 (1-9까지만 반복하게 됨) / from 1 through 10 (1-10까지 반복함)
+![image](https://user-images.githubusercontent.com/80936709/127250884-11f6a965-ba6b-4d01-b835-b3f15c016f96.png)
+![image](https://user-images.githubusercontent.com/80936709/127253612-3fb841ba-8fe1-4f72-b5aa-1dedfe73298a.png)
+  - @while : 조건이 false로 평가될 때까지 내용을 반복함
+
+### 내장함수
+  - sass에서 기본적으로 제공하는 내장 함수에는 많은 종류가 있음
+    - Sass Built-in Functions 에서 내장 함수를 확인할 수 있음
+    - 0부터 시작하지 않음
