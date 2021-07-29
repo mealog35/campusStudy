@@ -477,9 +477,9 @@
       const c = new Object({ name: "Mark" });
 
       console.log(c, typeof c);//{ name: 'Mark' } object
-      ```
+  ```
       -프로토타입 체인 (모든 객체들을 연결할 수 있음)
-      ```react
+  ```react
         // prototype
 
           function Person(name, age) {
@@ -507,9 +507,9 @@
 
           console.log(p instanceof Person);//true
           console.log(p instanceof Object);//object로 부터 person이 받아와서 둘다 true가 나옴
-      ```
+  ```
       - 프로토타입을 이용한 객체 확장
-      ```react
+  ```react
         //prototype 상속
           function Person() {}
 
@@ -532,8 +532,8 @@
           console.log(k instanceof Korean);
           console.log(k instanceof Person);
           console.log(k instanceof Object);
-      ```
-      ```react
+  ```
+  ```react
         //객체 리터럴
 
         const a = {};
@@ -562,9 +562,9 @@
         c.hello2();
         c.hello3();
 
-      ```
+  ```
       - 표준 내장 객체
-      ```react
+  ```react
         // 표준 내장 객체 : Array
 
         const a = new Array("red", "black", "white");
@@ -580,7 +580,7 @@
         console.log(b.slice(0, 1));
         console.log(Array.prototype.slice, Object.prototype.slice);//[Function: slice] undefined
         //Array에 내장되어 있는 함수라서 Object에는 undefinded가 뜸
-      ```
+  ```
       
  ### 클래스
   -객체를 만들 수 있는 새로운 
