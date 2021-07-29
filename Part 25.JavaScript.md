@@ -583,4 +583,205 @@
   ```
       
  ### 클래스
-  -객체를 만들 수 있는 새로운 
+  -객체를 만들 수 있는 새로운 방법
+```react
+  //선언적 방식
+    class A {}
+
+    console.log(new A()); //A {}
+    //class 표현식을 변수에 할당
+    const B = class {};
+
+    console.log(new B()); //B {}
+
+    //선언적 방식이지만 호이스팅은 일어나지 않는다
+```
+  - constructor (생성자)
+```react
+  // constructor 생성자
+
+      class A {}
+
+      console.log(new A());
+
+      class B {
+        constructor() {
+          console.log("constructor");
+        }
+      }
+
+      console.log(new B());
+
+      class C {
+        constructor(name, age) {
+          console.log("constructor", name, age);
+        }
+      }
+      console.log("lee", 377);
+      console.log(new C());//undefined undefined
+```
+  - 멤버 변수
+```react
+  //멤버 함수
+  class D {
+    hello1() {
+      console.log("hello1", this);
+    }
+
+    hello2 = () => {
+      console.log("hello2", this);
+    };
+  }
+  new D().hello1();
+  new D().hello2();
+```
+```react
+  //get set
+    class A {
+      _name = "no name";
+
+      get name() {
+        return this._name + "SSS";
+      }
+      set name(value) {
+        this._name = value + "111";
+      }
+    }
+
+    const a = new A();
+    console.log(a);
+    a.name = "Mark";
+    console.log(a); //Mark111
+
+    console.log(a.name); // Mark111SSS
+    console.log(a._name); //Mark 111
+    
+    //readonly set함수를 없앰
+    class B {
+      _name = "no name";
+
+      get name() {
+        return this._name + "SSS";
+      }
+    }
+    const b = new B();
+    console.log(b);
+    b.name = "Mark";
+    console.log(b);
+```
+```react
+    //static 변수, 함수
+      class C {
+        static age = 37;
+        static hello() {
+          console.log(C.age);
+        }
+      }
+      console.log(C, C.age);
+      C.hello();
+
+      class D {
+        age = 37;
+        static hello() {
+          console.log(this.age);
+        }
+      }
+      console.log(D, D.age);
+      D.hello();
+
+      //이름 자체가 클래스가 됨
+      class E {
+        static name = "this is not name E class";
+      }
+      console.log(E); //[class this is not name E class] { name: 'this is not name E class' }
+```
+```react
+  //상속 기본
+    class Parent {
+      name = "Lee";
+
+      hello() {
+        console.log("hello", this.name);
+      }
+    }
+
+    class Child extends Parent {}
+
+    const p = new Parent();
+    const c = new Child();
+    console.log(p, c);
+
+    c.hello(); //hello Lee
+    c.name = "Anna";
+    c.hello(); //hello Anna
+```
+```react
+  //변수, 함수 추가 및 오버라이딩
+
+    class Parent {
+      name = "Lee";
+
+      hello() {
+        console.log("hello", this.name);
+      }
+    }
+
+    class Child extends Parent {
+      age = 37;
+
+      hello() {
+        console.log("hello", this.name, this.age);
+      }
+    }
+
+    const p = new Parent();
+    const c = new Child();
+    c.hello(); //hello Lee 37
+    c.name = "Mark";
+    c.hello(); //hello Mark 37
+
+```
+```react
+  //super 클래스의 상속 생성자 함수 변경
+
+    class Parent {
+      name;
+
+      constructor(name) {
+        this.name = name;
+      }
+      hello() {
+        console.log("hello", this.name);
+      }
+    }
+
+    class Child extends Parent {
+      age;
+
+      constructor(name, age) {
+        super(name); //부모에서 네임을 가지고 옴
+        this.age = age;
+      }
+      hello() {
+        console.log("hello", this.name, this.age);
+      }
+    }
+    const p = new Parent("Mark");
+    const c = new Child("Mark", 37);
+
+    console.log(p, c);
+    c.hello();
+
+```
+```react
+  // static 상속
+    class Parent {
+      static age = 37;
+    }
+
+    class Child extends Parent {}
+
+    console.log(Parent.age, Child.age);
+```
+
+### Promise
