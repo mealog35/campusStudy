@@ -30,4 +30,481 @@
   
 ### 변수와 상수
   - const 상수를 지칭하는 이름 = 값 // 값이 변하지 않음
-  - let 변수를 지칭하는 이름 = 값 // 값이 변할수 있음
+  - let 변수를 지칭하는 이름 = 값 // 값이 변할수 있음 var 함수 스코프
+  - 유효범위
+```react
+  {
+    const name = 'Mark'
+    안에서만 사용할 수 있음
+  }
+    let age = 27 // 밖에서 선언할 경우에는 블럭 안에서도 사용할 수 있음
+```
+```react
+  // 블록 스코프에서는 실행됨 하지만, 함수 스코프에서는 그 안에서만 실행 됨 그래서 const, let을 사용하는 거를 추천 함
+  {
+    var d =0;
+    console.log(d);
+  }
+  console.log(d); //0 실행됨
+```
+
+### var 호이스팅
+  - 아래있는 함수를 끌어 올린다
+  - 호이스팅에 문제가 생겨서 사용하는거를 추천하지 않음
+```react
+  function hello1(){
+    console.log('hello1');
+  }
+
+  hello1();
+
+  hello2();
+  function hello2(){
+      console.log('hello2');
+}
+```react
+  console.log(name); // undefinded
+
+  name = 'Mark';
+
+  console.log(name); // Mark
+
+  var name = 'hello'; //var 가 호이스팅이 됨
+```
+```react
+  console.log(name); // error 뜸
+
+  name = 'Mark';
+
+  console.log(name); // Mark
+
+  let name; //let은 호이스팅이 되지 않음
+```
+
+### 자료형
+  - 기본타입
+    - boolean
+      ```react
+        //Boolean
+
+        const a = new Boolean(false); // 객체
+        console.log(a, typeof a); // [Boolean : false] , object 객체 자체는 true임
+
+        const b = Boolean(false);
+        console.log(b, typeof b); // false boolean
+      ```
+    - null
+    - undefined
+      ```react
+        const a = null;
+        console.log(a, typeof a); // null object 값이 없는 객체
+
+        const b = undefined;
+        console.log(b, typeof b); // undefined undefined
+        // null과 undefined 정확한 구분을 위해서는 === 으로 비교를 해야 함
+      ```
+    - number
+      ```react
+        const a = 37;
+        console.log(a, typeof a); // 37, number
+
+        const b = NaN;
+        console.log(b, typeof b); // Nan, number
+
+        // NaN이 쓰이는 경우는 형변환을 할 경우에
+        // 문자열이 숫자로 바껴야 하는데 바뀔 수 없는 경우
+        const c = Number("Mark");
+        console.log(c, typeof c);
+
+        const d = Number("67");
+        console.log(d, typeof d);
+      ```
+    - string
+      ```react
+        const e = "Mark";
+        console.log(e, typeof e);//Mark string
+
+        const f = "Mark" + "Lee";
+
+        const g = e + "Lee";
+        //template string `(백틱)을 사용함
+        const h = `${e} Lee`;
+        console.log(h, typeof h);//Mark Lee string
+      ```
+    - symbol(eECMAScript 6 추가 됨)
+      ```react
+        const a = Symbol();
+        const b = Symbol(37);
+        const c = Symbol("Mark");
+        const d = Symbol("Mark");
+
+        console.log(a, typeof a);//Symbol() symbol
+        console.log(c === d);
+
+        //new Symbol(); 사용할 수 없음
+      ```
+  - 객체 
+
+### 조건문
+  - 표현식이 참으로 평가될 때, 실행되는 블럭
+  ```react
+      if(true){
+      console.log('항상 실행');
+      }
+      //블럭 코드가 한줄이면, 중괄호 {}는 생략 가능합니다
+      if(false) console.log('항상 실행되지 않음');
+  ```
+  - 표현식이 거짓으로 평가될 때
+  - 표현식이 참으로 평가될 때
+  ```react
+    //false
+    //0
+    //''
+    //null
+    //undefined
+    //NaN
+
+    if (false) console.log(false);
+    if (0) console.log(false);
+    if ("") console.log("");
+    if (null) console.log(null);
+    if (undefined) console.log(undefined);
+    if (NaN) console.log(NaN);
+
+    //true
+    //37
+    //-37
+    //'Mark'
+    //{}
+    //[]
+
+    if (true) console.log(true);
+    if (37) console.log(37);
+    if (-37) console.log(-37);
+    if ("Mark") console.log("Mark");
+    if ({}) console.log({});
+    if ([]) console.log([]);
+  ```
+  - else
+  ```react
+    const n = 37;
+    //블럭 안 문장이 하나일 경우 ,중괄호 없이 사용 가능
+    if(n>0){
+        console.log('n이 0 보다 큰 경우');
+    } else{
+        console.log('n이 0 보다 크지 않은 경우');
+    }
+  ```
+  - else if{}
+    - if에 해당되지 않을 때
+    ```react
+      // 이렇게 하면 헷갈릴수가 있음
+      const n = 15;
+      if (n % 3 === 0) {
+        console.log("n은 3의 배수 입니다.");
+      } else if (n % 5 === 0) {
+        console.log("n은 5의 배수 입니다");
+      } else {
+        console.log("n은 3의 배수도 아니고, 5의 배수도 아닙니다");
+      }
+      //반복돼서 사용될 경우에는 변수를 이용하여 사용하면 편리함
+      const multipleOfThree = (n % 3 ===0);
+      const multipleOfFive = (n % 5 ===0);
+
+      if (multipleOfThree && multipleOfFive) {
+        console.log("n은 15의 배수입니다");
+      } else if (multipleOfThree) {
+        console.log("n은 3의 배수 입니다.");
+      } else if (multipleOfFive) {
+        console.log("n은 5의 배수 입니다.");
+      } else {
+        console.log("n은 3의 배수도 아니고, 5의 배수도 아닙니다");
+      }
+      //중첩으로 사용 가능함
+      if (multipleOfThree && multipleOfFive) {
+          console.log("n은 15의 배수입니다");
+        }else{
+           if (multipleOfThree) {
+              console.log("n은 3의 배수 입니다.");
+          } else if (multipleOfFive) {
+              console.log("n은 5의 배수 입니다.");
+          } else {
+              console.log("n은 3의 배수도 아니고, 5의 배수도 아닙니다");
+          }
+      }   
+    ```
+    - 논리 연산자를 이용한 조건문 평가 (&& || !)
+    ```react
+      // &&
+      if(true && true){
+          console.log('두개 모두참이면 참')
+      }
+      if(true && false){
+          console.log('한개만 참이면 거짓')
+      }
+      if(false && true){
+          console.log('한개만 참이면 거짓')
+      }
+      if(false && false){
+          console.log('한개만 참이면 거짓')
+      }
+      // ||
+      if(true && true){
+          console.log('두개 모두 참이면 참')
+      }
+      if(true && false){
+          console.log('한개만 참이면 참')
+      }
+      if(false && false){
+          console.log('두개 모두 거짓이면 거짓')
+      }
+      // !
+      if(!true){
+          console.log('참이면 거짓')
+      }
+      if(!false){
+          console.log('거짓이면 참')
+      }
+    ```
+    ```react
+      let n = 7;
+      n % 5 === 0 && console.log("5로 나누어 떨어질 때만 실행1");
+      // 앞 표현식의 평가 결과가 거짓일때는 뒤 표현식을 평가할 필요가 없어서 실행하지 않는다
+      n = 5;
+      n % 5 === 0 && console.log("5로 나누어 떨어질 때만 실행2");
+      // 앞 조건이 맞으면 실행 됨
+
+      //앞 표현식을 평가를 해서 참이면, 뒤 표현식을 평가할 필요가 없어서 실행하지 않는다.
+      n = 5;
+      n % 5 === 0 || console.log("5로 나누어 떨어질 때만 실행되지 않음3");
+
+      n = 6;
+      n % 5 === 0 || console.log("5로 나누어 떨어질 때만 실행되지 않음4");
+      // 앞 표현식을 평가해서 거짓 일때만, 뒤 표현식을 평가하게 됨
+    ```
+    - 삼항 연산자를 이용한 조건부 실행
+      ```react
+        const message = n % 5 === 0 ? "5의 배수 입니다" : "5의 배수가 아닙니다";
+        console.log(message);
+      ```
+    - switch를 이용함
+    ```react
+      let n = 5;
+      switch (n) {
+        default:
+          console.log(n);
+      }
+      // 5의 배수입니다 5 둘다 출력됨
+      switch (n % 5) {
+        case 0: {
+          console.log("5의 배수입니다.");
+        }
+        default:
+          console.log(n);
+      }
+      //break 문을 걸어서 5의 배수입니다만 나오도록 출력하기 case 값은 조건문안의 결과값 내용
+      switch (n % 5) {
+        case 0: {
+          console.log("5의 배수입니다.");
+          break;
+        }
+        default:
+          console.log(n);
+      }
+      n = 8;
+      switch (n % 5) {
+        case 0: {
+          console.log("5의 배수입니다.");
+          break;
+        }
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+          console.log(n);
+        default:
+          console.log(n);
+      }
+    ```
+    - 반복문 for(초기화; 반복 조건; 반복이 된 후 실행되는 코드){반복이 되는 코드 블럭} / 
+    - for(;;){d} // 무한루프
+    ```react
+      while(조건){
+        조건이 거짓이 될 때까지 반복 실행
+      }
+      do{
+        조건이 거짓이 될 때까지 반복 실행
+      }while(조건);
+    ```
+    - for of // iterable
+    - for in // 모든 프로퍼티를 담을 수 있음
+    ```react
+      function hello1() {
+      console.log("hello1");
+      }
+    ```
+    - function vs new Function
+    ```react
+      global.a = 0;
+      {
+        const a = 1;
+
+        const test = new Function("return a");
+
+        console.log(test());
+      }
+      {
+        const a = 2;
+
+        const test = function () {
+          return a;
+        };
+        console.log(test());
+      }
+
+    ```
+    ```react
+      console.log(hello1, typeof hello1);
+      //매게변수를 이용하여 넣을 수 있음
+      function hello2(name) {
+        console.log("hello2", name);
+      }
+      function hello3(name) {
+        return `hello3 ${name}`;
+      }
+
+      console.log(hello3("Mark"));
+    ```
+    - () =>{}
+    ```react
+      const hello = () => {
+      console.log("hello1");
+      };
+
+      const hello2 = (name) =>{
+          console.log('hello2',name);
+      };
+
+      const hello3 = (name, age) =>{
+          console.log('hello3', name, age);
+      };
+
+      const hello4 = name =>{
+          return `hello4 ${name}`;
+      }
+
+      const hello5 = name => `hello5 ${name}`
+    ```
+    - new 함수();
+    ```react
+      function Person(name, age) {
+      console.log(this);
+      this.name = name;
+      this.age = age;
+      }
+
+      const p = new Person("Mark", 37);
+      console.log(p, p.name, p.age);
+
+      const a = new Person("Anna", 26);
+      console.log(a, a.name, a.age);
+
+      // 화살표 함수에서는 this를 사용할 수가 없음
+      const Cat = (name, age) => {
+        this.name = name;
+        this.age = age;
+      };
+
+      const c = new Cat("냥이", 33);
+      console.log(c, c.name, c.age);
+    ```
+    - 함수 안에 중첩 가능
+    ```react
+      //함수를 호출하면 함수를 만들어서 리턴
+      function plus(base) {
+        return function (num) {
+          return base + num;
+        };
+      }
+
+      const plus5 = plus(5);
+      console.log(plus5(10));
+
+      const plus7 = plus(7);
+      console.log(plus7(8));
+    ```
+    - 함수를 호출할 때, 인자로 함수를 사용 (콜백)
+    ```react
+      function hello(c) {
+      console.log("hello");
+      c();
+      }
+      hello(function () {
+        console.log("callback");
+      });
+    ```
+    
+### 객체 (object)
+  - 함수, 클래스 (틀) => 객체, 개체, object
+  ```react
+    //값을 속성으로 넣기
+    function A() {
+      this.name = "Mark";
+    }
+    const a = new A(); //{ name: 'Mark' }
+    console.log(a);
+
+    //함수를 속성으로 넣기
+    function B() {
+      this.hello = function () {
+        console.log("hello");
+      };
+    }
+    new B().hello();
+  ```
+  - new Object()
+  ```react
+    // new Object
+      const a = new Object();
+
+      console.log(a, typeof a);//{} object
+
+      const b = new Object(true);
+
+      console.log(b, typeof b);//[Boolean: true] object
+
+      const c = new Object({ name: "Mark" });
+
+      console.log(c, typeof c);//{ name: 'Mark' } object
+      ```
+      -프로토타입 체인 (모든 객체들을 연결할 수 있음)
+      ```react
+        // prototype
+
+          function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            //   this.hello = function () {
+            //     console.log("hello", this.name, this.age);
+            //   };
+          }
+          Person.prototype.hello = function () {
+            console.log("hello", this.name, this.age);
+          };
+
+          const p = new Person("Mark", 37);
+          p.hello();// hello Mark 37
+          console.log(p.toString());// [object Object]
+          console.log(Person.prototype);
+          console.log(Person.prototype.toString);//[Function: toString]
+          console.log(Person.prototype.constructor);//[Function: Person]
+          console.log(Person.prototype.hello);
+
+          console.log(Object.prototype);//{}
+          console.log(Object.prototype.toString);//[Function: toString]
+          console.log(Object.prototype.constructor);//[Function: Object]
+
+          console.log(p instanceof Person);//true
+          console.log(p instanceof Object);//object로 부터 person이 받아와서 둘다 true가 나옴
+      ```
