@@ -789,3 +789,13 @@
   - ![image](https://user-images.githubusercontent.com/80936709/127463341-70b4cd51-3f9a-4deb-8a7a-1794ad50186d.png)
   - 조금더 효율적으로 로직 구성하기
   - ![image](https://user-images.githubusercontent.com/80936709/127464392-b49ed236-d940-474e-b399-1ccdbccc2dea.png)
+  - ![image](https://user-images.githubusercontent.com/80936709/127465206-1ee574ec-0d20-438b-b70a-b413e400a1db.png)
+    - 전송 실패했을 경우 성공했을 경우를 나눠서 보기 위한 것 / 인자를 전달 할 경우에는 message 처럼 사용하면 됨
+    - ![image](https://user-images.githubusercontent.com/80936709/127465849-28aedb43-5bc6-4d3d-9d15-4d4bf2622d7a.png)
+    - ![image](https://user-images.githubusercontent.com/80936709/127469758-8c4fd206-4f26-4583-8a04-1ea02e2170f9.png)
+    - ![image](https://user-images.githubusercontent.com/80936709/127471647-caa3df63-cab5-4492-adde-ffc093d1eeba.png)
+    - ![image](https://user-images.githubusercontent.com/80936709/127472450-c11e687e-c6ae-454e-905d-37008b86d6af.png)
+    - ![image](https://user-images.githubusercontent.com/80936709/127472703-607bb267-f7be-47f1-93e8-a78a4a72e659.png)
+
+
+
