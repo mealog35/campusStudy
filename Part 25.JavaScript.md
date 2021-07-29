@@ -478,7 +478,7 @@
 
       console.log(c, typeof c);//{ name: 'Mark' } object
   ```
-      -프로토타입 체인 (모든 객체들을 연결할 수 있음)
+  -프로토타입 체인 (모든 객체들을 연결할 수 있음)
   ```react
         // prototype
 
@@ -508,7 +508,7 @@
           console.log(p instanceof Person);//true
           console.log(p instanceof Object);//object로 부터 person이 받아와서 둘다 true가 나옴
   ```
-      - 프로토타입을 이용한 객체 확장
+  - 프로토타입을 이용한 객체 확장
   ```react
         //prototype 상속
           function Person() {}
@@ -563,7 +563,7 @@
         c.hello3();
 
   ```
-      - 표준 내장 객체
+  - 표준 내장 객체
   ```react
         // 표준 내장 객체 : Array
 
