@@ -785,3 +785,7 @@
 ```
 
 ### Promise
+  - 비동기 작업이 맞이할 미래의완료 또는 실패와 그 결과 값을 나타냄
+  - ![image](https://user-images.githubusercontent.com/80936709/127463341-70b4cd51-3f9a-4deb-8a7a-1794ad50186d.png)
+  - 조금더 효율적으로 로직 구성하기
+  - ![image](https://user-images.githubusercontent.com/80936709/127464392-b49ed236-d940-474e-b399-1ccdbccc2dea.png)
