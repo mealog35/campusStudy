@@ -508,3 +508,79 @@
           console.log(p instanceof Person);//true
           console.log(p instanceof Object);//object로 부터 person이 받아와서 둘다 true가 나옴
       ```
+      - 프로토타입을 이용한 객체 확장
+      ```react
+        //prototype 상속
+          function Person() {}
+
+          Person.prototype.hello = function () {
+            console.log("hello");
+          };
+
+          function Korean(region) {
+            this.region = region;
+            this.where = function () {
+              console.log("where", this.region);
+            };
+          }
+          Korean.prototype = Person.prototype;
+
+          const k = new Korean("Seoul");
+          k.hello();
+          k.where();
+
+          console.log(k instanceof Korean);
+          console.log(k instanceof Person);
+          console.log(k instanceof Object);
+      ```
+      ```react
+        //객체 리터럴
+
+        const a = {};
+
+        console.log(a, typeof a);
+
+        const b = {
+          name: "Mark",
+        };
+
+        console.log(b, typeof b);
+
+        const c = {
+          name: "Mark",
+          hello1() {
+            console.log("hello1", this.name);
+          },
+          hello2: function () {
+            console.log("hello2", this.name);
+          },
+          hello3: () => {
+            console.log("hello3", this);//arrow 함수이기 때문에 this가 먹지 않음
+          },
+        };
+        c.hello1();
+        c.hello2();
+        c.hello3();
+
+      ```
+      - 표준 내장 객체
+      ```react
+        // 표준 내장 객체 : Array
+
+        const a = new Array("red", "black", "white");
+
+        console.log(a, typeof a); //[ 'red', 'black', 'white' ] object
+
+        const b = ["red", "green", "yellow"];
+
+        console.log(b, typeof b);
+        console.log(b instanceof Array);
+        console.log(b instanceof Object);
+
+        console.log(b.slice(0, 1));
+        console.log(Array.prototype.slice, Object.prototype.slice);//[Function: slice] undefined
+        //Array에 내장되어 있는 함수라서 Object에는 undefinded가 뜸
+      ```
+      
+ ### 클래스
+  -객체를 만들 수 있는 새로운 
