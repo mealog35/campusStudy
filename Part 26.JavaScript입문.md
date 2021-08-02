@@ -75,6 +75,26 @@
     - ![image](https://user-images.githubusercontent.com/80936709/127859170-27e29a8d-7d75-4153-ba87-2270eb554b74.png)
   - slice ( 0,2)
     - ![image](https://user-images.githubusercontent.com/80936709/127859629-d1579ba9-a98d-42fa-9d8e-1999c2a994c5.png)
+  - shift(앞에서 부터 빼기) pop(뒤에서 빼기) unshift(앞에 숫자 추가) push(뒤에 숫자 추가) / 기존 배열이 수정 됨
+    - ![image](https://user-images.githubusercontent.com/80936709/127935508-6a33171c-3517-4c39-a68e-4c407bb96700.png)
+    - ![image](https://user-images.githubusercontent.com/80936709/127935662-cf26d740-af72-45ff-9181-df28e987a6e2.png)
+    - ![image](https://user-images.githubusercontent.com/80936709/127935825-795c56ef-82d3-4386-8d9c-22df728be495.png)
+    - ![image](https://user-images.githubusercontent.com/80936709/127935875-6bfde48e-a03a-4ab9-92ff-893532879fb6.png)
+   - concat(배열을 합쳐줌) / 기존 배열이 수정되지 않음
+    - ![image](https://user-images.githubusercontent.com/80936709/127936043-e222d760-5f49-4c42-994e-ddac6103c77e.png)
+   - join(배열의 값을 문자열로 합칠 경우 사용함)
+    - ![image](https://user-images.githubusercontent.com/80936709/127936334-a857a79a-0c8e-49ed-ae00-6dfc984e9ced.png)
+   - reduce(어떤 값을 연산 할 경우에 사용해야 함)
+    - ![image](https://user-images.githubusercontent.com/80936709/127936853-3aeacf7d-0e06-4915-afb3-41d60806b448.png)
+    - ![image](https://user-images.githubusercontent.com/80936709/127937362-6cb6ec8c-a234-408d-9011-63b022ff5a76.png)
+    - ![image](https://user-images.githubusercontent.com/80936709/127937803-89d78672-8f2b-4e11-ab58-e784d15e98e1.png)
+  
+
+
+
+
+
+
 
 
 
