@@ -62,8 +62,25 @@
 ### 배열 내장함수
   - forEach (값이 다 나오게 하기 위해서)
     - ![image](https://user-images.githubusercontent.com/80936709/127851368-55a8a409-a3d6-48cd-9419-f8f4f5a8a229.png)
-  - map
-    - 
+  - map (내가 원하는 부분만 출력할수 있고, 간략하게 할수 있음)
+    - ![image](https://user-images.githubusercontent.com/80936709/127854168-8de483e5-71f0-449c-9f2f-2acc4b4a9cba.png)
+    - ![image](https://user-images.githubusercontent.com/80936709/127854336-1e989705-f1b6-4a29-af5c-2c7bc46d4a06.png)
+  - indexOf (내가 원하는 배열을 숫자로 반환함)
+    - ![image](https://user-images.githubusercontent.com/80936709/127854669-336c147b-93d1-429b-8b1b-0ac29ff8dbb1.png)
+  - findIndex (객체에서 원하는 아이디를 가지고 올 때 번호로 반환함)
+  - find(그 배열 자체를 반환함)
+    - ![image](https://user-images.githubusercontent.com/80936709/127856097-0144746f-9fbd-4d1d-9a78-81bcc7ce8dee.png)
+  - filter (필터를 통해서 그 값만 보여주겠다)
+  - splice ( 짤린 값만 보여주겠다 / 나머지 값은 그 객체에 있음 / 기존의 값이 변경 됨_
+    - ![image](https://user-images.githubusercontent.com/80936709/127859170-27e29a8d-7d75-4153-ba87-2270eb554b74.png)
+  - slice ( 0,2)
+    - ![image](https://user-images.githubusercontent.com/80936709/127859629-d1579ba9-a98d-42fa-9d8e-1999c2a994c5.png)
+
+
+
+
+
+
 
 
 
