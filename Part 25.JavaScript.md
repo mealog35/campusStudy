@@ -809,5 +809,7 @@
   - Window.localStorage : 전역객체로 로그인이 되면 그 값이 있는지를 볼 수가 있음
   - Window.location : 다른 주소를 등록해서 처리함
 
+### 예제
+
 
 
