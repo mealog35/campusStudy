@@ -799,5 +799,15 @@
 
 ### async -await
   - ![image](https://user-images.githubusercontent.com/80936709/127477453-f98885ed-496c-40fc-b340-defd75de83c1.png)
+  - ![image](https://user-images.githubusercontent.com/80936709/127791992-ec84e4a2-b8b0-40cf-9b51-b9bd4c0705a4.png)
+  - ![image](https://user-images.githubusercontent.com/80936709/127792350-46fda107-0c5e-4f12-90c3-835747a969c0.png)
+  - ![image](https://user-images.githubusercontent.com/80936709/127792555-dada0603-d503-4355-8fcb-551486d5125a.png)
+
+### Project
+  - axios : promise 형태로 사용이 됨
+  - DOMContentLoaded : 문서가 완전히 로드 및 파싱되었을때 발생됨
+  - Window.localStorage : 전역객체로 로그인이 되면 그 값이 있는지를 볼 수가 있음
+  - Window.location : 다른 주소를 등록해서 처리함
+
 
 
