@@ -70,8 +70,9 @@
   - findIndex (객체에서 원하는 아이디를 가지고 올 때 번호로 반환함)
   - find(그 배열 자체를 반환함)
     - ![image](https://user-images.githubusercontent.com/80936709/127856097-0144746f-9fbd-4d1d-9a78-81bcc7ce8dee.png)
-  - filter (필터를 통해서 그 값만 보여주겠다)
-  - splice ( 짤린 값만 보여주겠다 / 나머지 값은 그 객체에 있음 / 기존의 값이 변경 됨_
+  - filter (필터를 통해서 그 값만 보여주겠다) / 기존 값이 변경되지 않음
+    - ![image](https://user-images.githubusercontent.com/80936709/127939183-dbf8d4b3-2c27-4212-b52d-507738b100b7.png)
+  - splice ( 짤린 값만 보여주겠다 / 나머지 값은 그 객체에 있음 / 기존의 값이 변경 됨
     - ![image](https://user-images.githubusercontent.com/80936709/127859170-27e29a8d-7d75-4153-ba87-2270eb554b74.png)
   - slice ( 0,2)
     - ![image](https://user-images.githubusercontent.com/80936709/127859629-d1579ba9-a98d-42fa-9d8e-1999c2a994c5.png)
@@ -88,6 +89,15 @@
     - ![image](https://user-images.githubusercontent.com/80936709/127936853-3aeacf7d-0e06-4915-afb3-41d60806b448.png)
     - ![image](https://user-images.githubusercontent.com/80936709/127937362-6cb6ec8c-a234-408d-9011-63b022ff5a76.png)
     - ![image](https://user-images.githubusercontent.com/80936709/127937803-89d78672-8f2b-4e11-ab58-e784d15e98e1.png)
+
+### 프로토타입과 클래스
+ - 객체 생성자
+   - ![image](https://user-images.githubusercontent.com/80936709/127941535-6a9f1822-48e1-4701-bcb7-6958e8d8be4e.png)
+ - 객체 생성자를 상속 받음
+   - ![image](https://user-images.githubusercontent.com/80936709/127942308-a2b03bf2-02c0-4f4d-833b-9f8efd3ee314.png)
+ - 클래스형 상속받기
+   - 
+ 
   
 
 
