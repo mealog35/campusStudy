@@ -34,8 +34,12 @@
 ### useEffect
   - 컴포넌트가 마운트 됐을 때 (처음 나타났을 때), 언마운트 됐을 때 (사라질 때), 그리고 업데이트 될 때 (특정 props가 바뀔 때)
 
+### useMemo
+  - 필요한 경우에만 리랜더링 되도록 하기
+  - 연산된 값을 재 사용할 경우
+
 ### useCallback
-  - 함수를 재사용할 경우에 씀
+  - 특정함수를 재사용할 경우에 씀
   - React.memo를 이용해서 리렌더링을 방지함
 
 ### useReducer
@@ -43,7 +47,13 @@
   - useState 대신에 사용함
   - ![image](https://user-images.githubusercontent.com/80936709/128003315-a4e3b842-2804-4586-bb69-adefa493145c.png)
 
+### createContext
+  - 컴포넌트 통해서 값을 전달 받는것이 아니라 바로 사용할 수 있도록 하는 것
+  - provider가 내장되어 있음
+  - dispatch 여러컴포넌트를 거치지 않고 사용할 수 있음
 
+### immer
+  - 불변성을 유지해줌
 
 
 
