@@ -77,6 +77,13 @@ console.log(obj3.hasOwnProperty('asss')) // false
 
 ```
 
-function A(){}
+function A(){} // obj._proto_ => A()
 
-let obj = new A(); 
+let obj = new A();  //Object.getPrototypeOf(obj) => A()
+
+function B() {}
+let obj2= new B()
+
+obj2._proto_===Object.getPrototypeOf(obj2) // true
+
+- 내부적으로는 빈 객체를 생성한 후에 --> 같은 이름의 "프로토타입 객체"를 새로운 객체의 원형(프로토타입)으로 설정
