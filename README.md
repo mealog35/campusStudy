@@ -99,3 +99,11 @@ function Add(a,b){
 Add.prototype.plus = function(){
 return this.a + this.b
 }
+
+#### for ..in
+- 위 코드에서 마지막에 생성한 객체 -> for ..in 반복문으로 순회 --> 결과는 프로토 타입 체인으로 연결되어 있는 원형(부모)의 멤버(속성,메서들)들이 다 나온다
+
+- object.keys() vs Object.value() // 앞에 key 값이 나옴 vs 뒤에 내용이 나옴
+
+next() 메서드와 yield
+
