@@ -107,3 +107,25 @@ return this.a + this.b
 
 next() 메서드와 yield
 
+### setTimeout vs setInterval
+
+- 비동기 처리에는 다양한 방법들이 존재 --> Promise와 Generator 함수를 이용한 비동기 처리
+
+-호출 스케쥴링 함수 --> setTimeout(),setInterval()
+- setTimeout                           setInterval
+- 일정시간 "후에" 함수를 1번만 실행       일정시간 "마다" 함수를 주기적으로 실행
+- clearTimeout                          clearInterval
+
+### Promise와 Generator 함수를 이용한 비동기 처리
+
+### Promise로 변환
+1. new Promise() 호출하면 --> 대기(Pending)상태
+2. 이때, 콜백 함수를선언할 수 있고 -> 인자는 resolve, reject
+3. 콜백 함수내에서 처리할거 처리한 후 --> resolve() 호출 --> 이행(Fulfilled)상태
+4. 성공이면 --> 리턴 값을 --> then()이 받아서 계속 처리 수행
+
+new Promise((resolve,reject) => {
+ //처리
+ resolve();
+});
+
