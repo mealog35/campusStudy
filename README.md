@@ -124,8 +124,30 @@ next() 메서드와 yield
 3. 콜백 함수내에서 처리할거 처리한 후 --> resolve() 호출 --> 이행(Fulfilled)상태
 4. 성공이면 --> 리턴 값을 --> then()이 받아서 계속 처리 수행
 
+
+```C
+
 new Promise((resolve,reject) => {
  //처리
- resolve();
-});
+ setTimeout(
+  (x) =>{
+   let result = x;
+   console.log(result);
+   resolve(result);
+ ),
+ 1000,
+ 10
+})
+ .then((result) =>{
+   return new Promise((resolve,reject)) =>{
+     setTimeout(
+      (x) =>{
+       result *= x;
+       console.log(result);
+       resolve(result);
+     ),
+     1000,
+     20
+   });
+  })
 
