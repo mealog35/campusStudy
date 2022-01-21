@@ -99,6 +99,7 @@ function Add(a,b){
 Add.prototype.plus = function(){
 return this.a + this.b
 }
+```
 
 #### for ..in
 - 위 코드에서 마지막에 생성한 객체 -> for ..in 반복문으로 순회 --> 결과는 프로토 타입 체인으로 연결되어 있는 원형(부모)의 멤버(속성,메서들)들이 다 나온다
@@ -124,9 +125,7 @@ next() 메서드와 yield
 3. 콜백 함수내에서 처리할거 처리한 후 --> resolve() 호출 --> 이행(Fulfilled)상태
 4. 성공이면 --> 리턴 값을 --> then()이 받아서 계속 처리 수행
 
-
 ```C
-
 new Promise((resolve,reject) => {
  //처리
  setTimeout(
@@ -150,4 +149,4 @@ new Promise((resolve,reject) => {
      20
    });
   })
-
+```
