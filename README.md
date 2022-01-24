@@ -15,6 +15,30 @@
     return this.a + this.b;
     }
 ```
+- 생성자 함수와 new 연산자에 의해 새로운 객체 생성 --> 어떤 편리한 장점 --> 객체의 생성과 새로운 객체의원형(프로토타입)을 지정
+- 뿐만 아니라, 괄호안에 (111,222)와 같은 초기화 값을 생성시에 편리하게 지정 --> 새로운 객체 인스턴스를 생성
+
+## 프로토타입 객체의 속성
+
+- constructor 속성 : 이 속성은 함수를 가리킨다 --> 참조 --> 즉, 참조를값으로 가지는 속성
+- 서로가 참조 (이 말은 서로가 연결고리 역할을 함) : 생성자 함수 (prototype) 프로토타입 객체(constructor)
+
+```C
+
+function Animal(name,age){
+ this.name = name;
+ this.age = age;
+}
+Animal.prototype.aaa = function(){ console.log('aaa');}
+
+function Animal2(name,age){
+ this.name = name;
+ this.age = age;
+}
+Animal2.prototype.bbb = function(){ console.log('bbb);}                                                                                                                   
+let a1 = new Animal('tiger',20);
+a1.aaa(); //aaa
+a1.bbb(); //bbb
 
 ## 자바스크립트 프로토타입 상속
 
