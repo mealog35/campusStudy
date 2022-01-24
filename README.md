@@ -150,3 +150,21 @@ new Promise((resolve,reject) => {
    });
   })
 ```
+
+- Promise와 Generator 함수를 이용한 비동기 처리 - Generator로 변환
+
+```C
+
+ function* testGen(){
+ 
+  const a = yield 10;
+  console.log(a)
+ }
+ 
+ const iter = testGen()
+ iter.next() // 값이 없는 걸로 나옴 , 다만 콘솔로 찍었을 경우에 값이 나옴 {value : 10 , done: false}
+ iter.next() // undefined {value : undefined , done : true}
+ iter.next(1) // 1
+ 
+ ```
+ 
