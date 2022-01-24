@@ -22,6 +22,8 @@
 
 - constructor 속성 : 이 속성은 함수를 가리킨다 --> 참조 --> 즉, 참조를값으로 가지는 속성
 - 서로가 참조 (이 말은 서로가 연결고리 역할을 함) : 생성자 함수 (prototype) 프로토타입 객체(constructor)
+- new 연산자에 의해 새롭게 생성된 객체 --> 인스턴스 , 생성자 함수(Animal) <--> new 객체(tiger,lion) 
+  => 이 둘의 관계는 딱히 없는데 중요한게 있다면, new 연산자가 생성자 함수를 이용해서 새로운 객체를 생성함
 
 ```C
 
@@ -39,6 +41,8 @@ Animal2.prototype.bbb = function(){ console.log('bbb);}
 let a1 = new Animal('tiger',20);
 a1.aaa(); //aaa
 a1.bbb(); //bbb
+
+```
 
 ## 자바스크립트 프로토타입 상속
 
