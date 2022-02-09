@@ -19,3 +19,19 @@
 - 대부분의 책의 제일 뒤에 붙어 있는 찾아보기 또는 색인과 같은 개념이다
 - ![image](https://user-images.githubusercontent.com/80936709/152957905-d0dc9791-cc2b-4324-a020-ca52b9232357.png)
 - ![image](https://user-images.githubusercontent.com/80936709/152957685-76b06e8e-a118-4c83-8806-f1dc07a4defc.png)
+
+#### 뷰
+- 가상의 테이블
+- 진짜 테이블에 링크 된 개념
+
+### 저장 프로시저
+- SQL Sever에서 제공해주는 프로그래밍 기능
+
+### 트리거
+- INSERT, UPDATE, DELETE 할 경우 동작함
+- 회원 테이블에 삭제작업이 일어날 경우 삭제되기 전에 미리 다른 곳에 삭제될 데이터를 자동으로 저장해주는 기능이 있음
+- ![image](https://user-images.githubusercontent.com/80936709/153104625-d1849fd2-7d16-428e-8cef-d3cfd62f4102.png)
+
+### 데이터베이스 백업 및 관리
+- 백업 : 현재의 데이터베이스를 다른 매체에 보관하는 작업
+- 복원 : 데이터베이스에 문제가 발생했을 때 다른 매체에 백업된 데이터를 이용해서 원상태로 돌려놓는 작업을 말함
