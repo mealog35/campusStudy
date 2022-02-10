@@ -14,3 +14,14 @@
 
 ## 6장 Transact-SQL 기본
 
+### SELECT 문
+- SELECT ... FROM : 원하는 데이터를 가져와 주는 기본적인 구문 / SELECT FROM WHERE
+- USE 구문 : SELECT 문을 학습하려면 먼저 사용할 데이터베이스를 지정해야 함 (데이터베이스 안에 테이블이 있음)
+- SELECT * FROM 테이블 
+- 테이블 전체 이름은 '인스턴스이름.데이터베이스이름.스키마이름.테이블이름'
+- dbo. (스키마 대신에 붙는 규칙)
+- ![image](https://user-images.githubusercontent.com/80936709/153317530-02b92cdb-caa1-47bc-8ed3-67ed21c249c1.png) ![image](https://user-images.githubusercontent.com/80936709/153317559-3715f747-0ef4-49be-9c39-805fec4f6e52.png)
+- ![image](https://user-images.githubusercontent.com/80936709/153318938-d7177cb8-77b0-499b-874f-19579cfe3128.png) ![image](https://user-images.githubusercontent.com/80936709/153318956-f46b670a-9ca9-4f1a-a1fd-ee326dce3474.png)
+
+
+
