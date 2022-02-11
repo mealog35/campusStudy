@@ -23,6 +23,10 @@
 - ![image](https://user-images.githubusercontent.com/80936709/153317530-02b92cdb-caa1-47bc-8ed3-67ed21c249c1.png) ![image](https://user-images.githubusercontent.com/80936709/153317559-3715f747-0ef4-49be-9c39-805fec4f6e52.png)
 - ![image](https://user-images.githubusercontent.com/80936709/153318938-d7177cb8-77b0-499b-874f-19579cfe3128.png) ![image](https://user-images.githubusercontent.com/80936709/153318956-f46b670a-9ca9-4f1a-a1fd-ee326dce3474.png)
 
+### WHERE 절
+- SELECT 필드이름 FROM 테이블이름 WHERE 조건식
+- SELECT * FROM 테이블명
+
 
 
 
