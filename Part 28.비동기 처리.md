@@ -17,4 +17,72 @@
   - ![image](https://user-images.githubusercontent.com/80936709/127960483-2bfc9fb2-5fcf-4b4f-9c19-8c0bf6867451.png)
 
 
+```react
+import axios from "axios";
+
+const error = {
+  data: {
+    code: "EREGUEST",
+    originalError: "error",
+  },
+};
+
+//서명 조회
+export const getSignAPI = (employeeNo) =>
+  axios
+    .get(`${process.env.REACT_APP_API_URL}/signature/${employeeNo}`, {
+      // responseType: "arraybuffer",
+    })
+    .then((res) => {
+      // console.log("서명조회 성공", res);
+      // const base64 = Buffer.from(res.data, "utf8").toString("base64");
+      // console.log("getSignAPI - base64", "data:;base64," + base64);
+      return res.data;
+    })
+    .catch((e) => {
+      // console.log("서명조회 실패", e);
+      return error;
+    });
+
+//서명 등록
+export const postSignAPI = (employeeNo, body) =>
+  axios
+    .post(`${process.env.REACT_APP_API_URL}/signature/${employeeNo}`, body)
+    .then((res) => {
+      // console.log("서명등록 성공", res);
+      return res.data;
+    })
+    .catch((e) => {
+      // console.log("서명등록 실패", e);
+      return error;
+    });
+
+//서명 수정
+export const putSignAPI = (employeeNo, body) =>
+  axios
+    .put(`${process.env.REACT_APP_API_URL}/signature/${employeeNo}`, body)
+    .then((res) => {
+      // console.log("서명수정 성공", res);
+      return res.data;
+    })
+    .catch((e) => {
+      // console.log("서명수정 실패", e);
+      return error;
+    });
+
+//서명 삭제
+export const deleteSignAPI = (employeeNo) =>
+  axios
+    .delete(`${process.env.REACT_APP_API_URL}/signature/${employeeNo}`)
+    .then((res) => {
+      // console.log("서명삭제 성공", res);
+      return res.data;
+    })
+    .catch((e) => {
+      // console.log("서명삭제 실패", e);
+      return error;
+    });
+
+```
+
 
