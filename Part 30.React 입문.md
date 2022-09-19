@@ -89,8 +89,8 @@ export default forwardRef(User);
 ```
 
 ### UseMemo
-- 해당하는 함수만 랜더링이 될 수 있도록 하고, 그 값을 유지 시키기 위함
 - useMemo를 통해 캐싱해놓은 값을 가지고 옴
+- 함수의 연산량이 많을때 이전 결과값을 재사용 하는 것이 목적
 
 ```React.dom
 import { useEffect, useMemo, useState } from 'react';
@@ -188,7 +188,7 @@ export default App;
 ```
 
 ### UseCallback
-- 함수를 메모리에서 가지고 와서 사용하는 것
+- 함수가 재생성 되는것을 방지하기 위한 목적
 
 ```React.dom
 
