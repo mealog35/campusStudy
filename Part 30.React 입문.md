@@ -55,6 +55,39 @@
 ### immer
   - 불변성을 유지해줌
 
+### FirwardRef
+  - Ref 전달
+
+```react.dom
+///App.js
+function App() {
+  const inputRef = useRef();
+
+  const focus = () =>{
+      inputRef.current.focus();
+  };
+  return (
+    <div className="App">
+      <User ref={inputRef}/>
+      <button onClick={focus}>button</button>
+    </div>
+  );
+}
+
+
+///User.js
+import React, { forwardRef } from 'react';
+
+const User = (props,ref) => {
+
+    return (
+        <input ref={ref}/>
+    );
+};
+
+export default forwardRef(User);
+```
+
 
 
 
