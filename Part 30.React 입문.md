@@ -88,6 +88,144 @@ const User = (props,ref) => {
 export default forwardRef(User);
 ```
 
+### UseMemo
+- 해당하는 함수만 랜더링이 될 수 있도록 하고, 그 값을 유지 시키기 위함
+- useMemo를 통해 캐싱해놓은 값을 가지고 옴
+
+```React.dom
+import { useEffect, useMemo, useState } from 'react';
+
+  const hardCalculate = (number) =>{
+    console.log("hardCalculate");
+    for(let i = 0; i<99999999; i++){}
+    return number +10000;
+  }
+
+  const easyCalculate = (number) =>{
+    console.log("easyCalculate");
+    return number +1;
+  }
+
+function App() {
+  const [hardNumber, setHardNumber] = useState(1);
+  const [easyNumber, setEasyNumber] = useState(1);
+
+  // const hardSum = hardCalculate(hardNumber)
+  const hardSum = useMemo(()=>{
+    return hardCalculate(hardNumber)
+  },[hardNumber])
+  
+  const easydSum = easyCalculate(easyNumber)
+  return (
+    <div className="App">
+      <h3>hardCalculate</h3>
+      <input
+        type="number"
+        value={hardNumber}
+        onChange={(e)=>setHardNumber(parseInt(e.target.value))}
+      />
+      <span>+ 1000= {hardSum}</span>
+
+      <h3>easyCalculate</h3>
+      <input
+        type="number"
+        value={easyNumber}
+        onChange={(e)=>setEasyNumber(parseInt(e.target.value))}
+
+      />
+      <span>+ 1= {easydSum}</span>
+    </div>
+  );
+}
+
+export default App;
+```
+
+```React.dom
+//useMemo 사용법
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+
+
+import React, { useEffect, useMemo, useState } from 'react';
+
+function App () {
+  const [number, setNumber] = useState(0);
+  const [isKorea, setIsKorea] = useState(true);
+
+  // const location = isKorea ? '한국' : '외국';
+  const location = useMemo(()=>{
+    return{
+      country : isKorea ? '한국' : '외국'
+    };
+  },[isKorea])
+  // object로 할 경우에는 useEffect 에 있는 인자값이 같은 변수임을 인지하지 못함
+  // const location = {
+  //   country : isKorea ? '한국' : '외국'
+  // }
+
+  useEffect(()=>{
+    console.log("useEffect")
+  },[location]);
+
+  return (
+    <div>
+      <h2>하루에 몇끼 먹어요?</h2>
+      <input
+        type="number"
+        value={number}
+        onChange={(e)=>setNumber(e.target.value)}
+      />
+      <hr/>
+      <h2>어느 나라에 있어요?
+      <p>나라 : {location.country}</p>
+      <button onClick={()=> setIsKorea(!isKorea)}>뱅기타자</button>
+      </h2>
+    </div>
+  );
+};
+
+export default App;
+```
+
+### UseCallback
+- 함수를 메모리에서 가지고 와서 사용하는 것
+
+```React.dom
+
+import React, { useCallback, useEffect, useState } from 'react';
+
+function Test () {
+    const [ number , setNumber] = useState(0);
+    const [toggle, setToggle] = useState(true);
+
+    const someFunction = useCallback(() =>{
+        console.log(`someFunc : number :${number}`);
+        return ;
+    },[number]); 
+    
+    useEffect(()=>{
+        console.log("someFunction change")
+    },[someFunction])
+
+    return (
+        <div>
+            <input
+                type="number"
+                value={number}
+                onChange={(e) =>setNumber(e.target.value)}
+            />
+            <br/>
+            <button onClick={()=>setToggle(!toggle)}>{toggle.toString()}</button>
+            <button onClick={someFunction}>dd</button>
+        </div>
+    );
+};
+
+export default Test;
+
+```
+ 
+
 
 
 
