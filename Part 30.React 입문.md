@@ -224,6 +224,56 @@ function Test () {
 export default Test;
 
 ```
+
+### UseReducer
+
+```React.dom
+
+import React, { useReducer, useState } from 'react';
+
+//reducer dispatch action
+
+const ACTION_TYPES = {
+    deposit:'deposit',
+    withdraw : 'withdraw'
+}
+
+const reducer = (state,action) =>{
+    console.log("reducer",state, action)
+    switch(action.type){
+        case ACTION_TYPES.disposit:
+            return state + action.payload
+        case ACTION_TYPES.disposit:
+            return state - action.payload
+        default:
+            return state
+    }
+}
+
+function Bank ()  {
+    const [number,setNumber] = useState(0);
+    const [money, dispatch] = useReducer(reducer,0)
+    return (
+        <div>
+            <h2>useReducer</h2>
+            <p>잔고 : {money}</p>
+            <input
+                type="number"
+                value={number}
+                onChange={(e)=>{setNumber(parseInt(e.target.value))}}
+                step="1000"
+            />
+            <button onClick={()=>dispatch({type:ACTION_TYPES.disposit, payload: number})}>예금</button>
+            <button onClick={()=>dispatch({type:ACTION_TYPES.withdraw, payload: number})}>출금</button>
+        </div>
+    );
+};
+
+export default Bank;
+
+```
+
+
  
 
 
