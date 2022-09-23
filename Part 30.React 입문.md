@@ -463,6 +463,34 @@ const Footer = () => {
  ### useRef
  - ref는 랜더링을 시키지 않음
  - 값을 유지시킴
+ 
+ ```React.dom
+ //ref 전달하는 방법
+    const inputRef = useRef();
+    const focus = () =>{
+        inputRef.current.focus();
+    }
+
+    return (
+        <>
+            <Page ref={inputRef}/>
+            <button onClick={focus}>focus</button>
+        </>
+    );
+};
+ 
+//Page.js
+const Page = (props,ref) => {
+    // const data = useContext(ThemeContext);
+    // const name = useContext(UserContext);
+    // console.log(data);
+    return (
+        <input ref={ref}/>
+    );
+};
+
+export default forwardRef(Page);
+ ```
 
 
 
