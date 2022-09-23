@@ -370,7 +370,95 @@ export default Name;
 
 ```
 
+### Context
+- props를 일일이 다 바꿔주지 않아도 됨
+- 컴포넌트를 재사용하기 어려워 질수 있음
+- 전역적인 데이터로 쓰기 위함
 
+```React.dom
+//context folder > ThemeContext.js
+import { createContext } from "react";
+export const ThemeContext = createContext(null);
+
+//Hong,js
+const Hong = () => {
+    const [isDark, setIsDark] = useState(false);
+
+    return (
+        <ThemeContext.Provider value={{isDark, setIsDark}}>
+            <Page/>
+        </ThemeContext.Provider>
+    );
+};
+
+export default Hong;
+
+//page.js
+const Page = () => {
+    const data = useContext(ThemeContext);
+    console.log(data);
+    return (
+        <div className='page'>
+            <Header/>
+            <Content/>
+            <Footer/>
+        </div>
+    );
+};
+
+//header.js
+const Header = () => {
+    const {isDark} = useContext(ThemeContext);
+    return (
+        <header
+            className='header'
+            style={{
+                backgroundColor:isDark? 'black':'lightgray',
+                color:isDark? 'white':'black'
+            }}
+        >
+            <h1>홍길동 웰컴!</h1>
+        </header>
+    );
+};
+
+//content.js
+const Content = () => {
+    const {isDark} = useContext(ThemeContext);
+
+    return (
+        <div
+            className='content'
+            style={{
+                backgroundColor:isDark? 'black':'lightgray',
+                color:isDark? 'white':'black'
+            }}
+        >
+            <h1>홍길동 좋은하루 되세요</h1>
+        </div>
+    );
+};
+
+//footer.js
+const Footer = () => {
+    const {isDark,setIsDark} = useContext(ThemeContext);
+
+    const toggleTheme = ()=>{
+        setIsDark(!isDark)
+    };
+
+    return (
+        <footer
+            className='footer'
+            style={{
+                backgroundColor:isDark? 'black':'lightgray',
+            }}
+        >
+            <button className='button' onClick={toggleTheme}>Dark Mode</button>
+        </footer>
+    );
+};
+```
  
 
 
