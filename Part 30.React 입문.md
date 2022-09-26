@@ -517,6 +517,8 @@ import rootReducer from './modules';
 import reportWebVitals from './reportWebVitals';
 
 const store = legacy_createStore(rootReducer);
+//미들웨어를 여러개 적용시킬 수 있음
+//const store = legacy_createStore(rootReducer,applyMiddleware(myLogger,logger));
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
