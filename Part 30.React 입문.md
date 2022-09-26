@@ -473,7 +473,8 @@ const Footer = () => {
 
     return (
         <>
-            <Page ref={inputRef}/>
+            <Page ref={inputRef}/> //1
+            <Page inputRef={inputRef}/> //2
             <button onClick={focus}>focus</button>
         </>
     );
@@ -490,6 +491,15 @@ const Page = (props,ref) => {
 };
 
 export default forwardRef(Page);
+
+const Page = ({inputRef}) => {
+    console.log(inputRef);
+    return (
+        <input ref={inputRef}/>
+    );
+};
+
+export default (Page);
  ```
 
 
