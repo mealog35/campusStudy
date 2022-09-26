@@ -501,7 +501,32 @@ const Page = ({inputRef}) => {
 
 export default (Page);
  ```
+###index.js
+- 리액트 v18에선 ReactDom.render이 더이상 지원되지 않기때문에 createRoot를 사용해야 함
+- const root = ReactDOM.createRoot(document.getElementById('root')); 변수로 담아서 사용
 
+```React.dom
+
+import React from 'react';
+import * as ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { legacy_createStore } from 'redux';
+import App from './App';
+import './index.css';
+import rootReducer from './modules';
+import reportWebVitals from './reportWebVitals';
+
+const store = legacy_createStore(rootReducer);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>
+  // document.getElementById('root')
+);
+
+```
 
 
 
