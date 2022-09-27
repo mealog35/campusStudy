@@ -530,6 +530,42 @@ root.render(
 
 ```
 
+###리덕스 로거 미들웨서 사용법
+
+```React.dom
+
+import React from 'react';
+import * as ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { applyMiddleware, legacy_createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import logger from 'redux-logger';
+import App from './App';
+import './index.css';
+import myLogger from './middlewares/myLogger';
+import rootReducer from './modules';
+import reportWebVitals from './reportWebVitals';
+
+//미들웨어를 여러개 적용시킬 수 있음
+const store = legacy_createStore(rootReducer,composeWithDevTools(applyMiddleware(logger)));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>
+  // document.getElementById('root')
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+```
+
+  - ![image](https://user-images.githubusercontent.com/80936709/192463315-5a902742-0de3-4aec-b4b5-f7a52101bf47.png)
+
 
 
 
