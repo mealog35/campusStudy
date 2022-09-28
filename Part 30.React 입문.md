@@ -565,6 +565,58 @@ reportWebVitals();
 ```
   - ![image](https://user-images.githubusercontent.com/80936709/192463315-5a902742-0de3-4aec-b4b5-f7a52101bf47.png)
 
+###connect
+
+```React.dom
+
+  import { connect, useDispatch, useSelector } from "react-redux";
+  import Counter from "../components/Counter";
+  import { decrease, increase,setDiff } from "../modules/counter";
+
+    function CounterContainer({number,diff,onSetDiff,onIncrease,ondecrease}){
+        return(
+            <Counter
+                number={number}
+                diff={diff}
+                onSetDiff={onSetDiff}
+                onIncrease={onIncrease}
+                ondecrease={ondecrease}
+            />
+        )
+    }
+    
+    // const {number, diff} = useSelector(state => ({
+    //     number : state.counter.number,
+    //     diff : state.counter.diff
+    // }));
+    // const number = useSelector(state => state.counter. number);
+    // const diff = useSelector(state => state.counter. diff);
+    const mapStateToProps = state =>({
+        number : state.counter.number,
+        diff : state.counter.diff
+    });
+    
+    // const dispatch = useDispatch();
+    // const onSetDiff = () => dispatch(setDiff(diff))
+    // const onIncrease = () => dispatch(increase())
+    // const ondecrease = () => dispatch(decrease())
+
+    const mapDispatchToProps = dispatch =>({
+        onIncrease : () => dispatch(increase()),
+        ondecrease : () => dispatch(decrease()),
+    })
+
+    //connect
+    export default connect(
+        mapStateToProps,
+        mapDispatchToProps
+    )(CounterContainer);
+
+    // const enhance = connect(mapStateToProps,mapDispatchToProps);
+    // export default enhance(CounterContainer)
+
+```
+
 
 
 
